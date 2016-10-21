@@ -2,7 +2,7 @@ version: '2'
 services:
   elasticsearch:
     hostname: elasticsearch
-    image: jonbrouse/elk:elasticsearch
+    image: git2Swarm/elk:elasticsearch
     build: elasticsearch
     command: -Des.insecure.allow.root=true
     ports:
@@ -11,7 +11,7 @@ services:
       - ./elasticsearch/volumes/esdata/:/opt/elasticsearch/data
   logstash:
     hostname: logstash
-    image: jonbrouse/elk:logstash
+    image: git2swarm/elk:logstash
     build: logstash
     ports:
       - "24642:24642"
@@ -23,7 +23,7 @@ services:
       - elasticsearch
   kibana:
     hostname: kibana
-    image: jonbrouse/elk:kibana
+    image: git2swarm/elk:kibana
     build: kibana
     links:
       - elasticsearch
