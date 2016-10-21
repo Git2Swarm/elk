@@ -11,7 +11,7 @@ services:
       - ./elasticsearch/volumes/esdata/:/opt/elasticsearch/data
   logstash:
     hostname: logstash
-    image: Git2swarm/elk:logstash
+    image: Git2Swarm/elk:logstash
     build: logstash
     ports:
       - "24642:24642"
@@ -23,7 +23,7 @@ services:
       - elasticsearch
   kibana:
     hostname: kibana
-    image: Git2swarm/elk:kibana
+    image: Git2Swarm/elk:kibana
     build: kibana
     links:
       - elasticsearch
